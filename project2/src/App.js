@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback, useReducer, useRef } from 'react';
+import React, { useMemo, useReducer, useRef } from 'react';
 import './App.css';
 import Header from './component/Header';
 import TodoEditor from './component/TodoEditor';
@@ -65,19 +65,19 @@ function App() {
     idRef.current += 1;
   };
 
-  const onUpdate = useCallback((targetId) => {
+  const onUpdate = (targetId) => {
     dispatch({
       type: "UPDATE",
       targetId
     });
-  }, []);
+  };
 
-  const onDelete = useCallback((targetId) => {
+  const onDelete = (targetId) => {
     dispatch({
       type: "DELETE",
       targetId
     });
-  }, []);
+  };
 
   const memoizedDispatches = useMemo(() => {
     return { onCreate, onUpdate, onDelete };
