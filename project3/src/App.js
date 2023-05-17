@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import React, { useReducer, useRef, useEffect, useState } from "react";
 import "./App.css"
 import Home from "./pages/Home";
@@ -9,19 +9,19 @@ import Edit from "./pages/Edit";
 const mokData = [
   {
     id: "mock1",
-    date: new Date().getTime(),
+    date: new Date().getTime() - 1,
     content: "mock1",
     emotionId: 1,
   },
   {
     id: "mock2",
-    date: new Date().getTime(),
+    date: new Date().getTime() - 2,
     content: "mock2",
     emotionId: 2,
   },
   {
     id: "mock3",
-    date: new Date().getTime(),
+    date: new Date().getTime() - 3,
     content: "mock3",
     emotionId: 3,
   },
@@ -117,12 +117,6 @@ function App() {
               <Route path="/diary/:id" element={<Diary/>} />
               <Route path="/edit/:id" element={<Edit/>} />
             </Routes>
-            <div>
-              <Link to={"/"}>Home</Link>
-              <Link to={"/new"}>New</Link>
-              <Link to={"/diary"}>Diary</Link>
-              <Link to={"/edit"}>Edit</Link>
-            </div>
           </div>
         </DiaryDispatchContext.Provider>
       </DiaryStateContext.Provider>
