@@ -85,7 +85,7 @@ const Editor = ({ initData, onSubmit }) => {
           onChange={handleChangeContent}
         />
       </div>
-      <div className="editor_section">
+      <div className="editor_section bottom_section">
         <Button 
           type={"negative"} 
           text={"취소하기"} 
