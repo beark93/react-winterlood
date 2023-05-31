@@ -21,7 +21,7 @@ const Diary = () => {
   }
 
   if (!data) {
-    return <div>일기를 불러오고 있습니다...</div>
+    return <div>일기를 불러오고 있습니다...</div>;
   } else {
     const { date, emotionId, content } = data;
     const title = `${getFormattedDate(new Date(Number(date)))} 기록`;
